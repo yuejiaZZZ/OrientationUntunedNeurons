@@ -40,23 +40,6 @@ for i = 1:10
     Beta = [Beta, beta];
 
 
-%     subplot(2,5,i)
-%     scatter(Y_test, predicted, 15, 'filled', 'Marker', 'o');
-%     hold on
-%     % fitting
-%     coefficients = polyfit(Y_test, predicted, 1);
-%     xFit = linspace(min(Y_test), max(Y_test), 100);
-%     yFit = polyval(coefficients, xFit);
-%     plot(xFit, yFit, 'r-')
-%     xticks(ori);
-%     xtickangle(65);
-%     yticks(ori);
-%     set(gca, 'FontSize', 6, 'FontAngle', 'italic');
-%     xlabel('True Orientation(deg)', 'FontSize', 8, 'FontAngle', 'normal');
-%     ylabel('Predicted Orientation(deg)', 'FontSize', 8, 'FontAngle', 'normal');
-%     title(sprintf('cv %d', i), 'FontSize', 12, 'FontAngle', 'normal');
-%     txt = {sprintf('r = %0.2f', r_out(i)), sprintf('MAE = %0.2f', MAE(i)), sprintf('p = %0.4f', p_out(i))};
-%     text( 'string',txt, 'Units','normalized','position',[0.5,0.15],  'FontSize',6,'FontWeight','Bold','FontName','Times New Roman');
 end
 r_mean = mean(r_out);
 Weights = Beta(2:end, :);
